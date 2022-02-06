@@ -40,7 +40,7 @@ def build_image_grid(image_directory):
     longitudes = sorted(list({image.get("longitude") for image in images}))
     latitudes = sorted(list({image.get("latitude") for image in images}))
 
-    fig, axes = plot.subplots(len(latitudes), len(longitudes))
+    _, axes = plot.subplots(len(latitudes), len(longitudes))
 
     for image in images:
 
