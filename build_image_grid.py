@@ -42,15 +42,14 @@ def build_image_grid(image_directory):
 
     fig, axes = plot.subplots(len(latitudes), len(longitudes))
 
-    print(longitudes)
-    print(latitudes)
-
     for image in images:
+
         row = latitudes.index(image["latitude"])
         col = longitudes.index(image["longitude"])
 
-        axes[row, col] = image["image"]
-
+        axes[row, col].imshow(image["image"])
+        axes[row, col].axis("off")
+    
     plot.show()
 
 if __name__ == "__main__":
